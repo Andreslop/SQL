@@ -1,0 +1,26 @@
+--Create the table
+CREATE TABLE store (id INTEGER PRIMARY KEY, product TEXT, stock INTEGER, price INTEGER, color TEXT);
+
+--Insert all the products
+INSERT INTO store VALUES (1, "Cardigan", 10, 100000, "Yellow");
+INSERT INTO store VALUES (2, "Jean", 10, 50000, "Black");
+INSERT INTO store VALUES (3, "Shorts", 10, 50000, "Blue");
+INSERT INTO store VALUES (4, "Jean", 10, 50000, "Blue");
+INSERT INTO store VALUES (5, "Shirt", 10, 100000, "Pink");
+INSERT INTO store VALUES (6, "T-shirt", 10, 50000, "White");
+INSERT INTO store VALUES (7, "Undershirt", 10, 50000, "White");
+INSERT INTO store VALUES (8, "Boxer", 20, 50000, "Green");
+INSERT INTO store VALUES (9, "Socks", 50, 100000, "Purple");
+INSERT INTO store VALUES (10, "Hats", 40, 50000, "Red");
+INSERT INTO store VALUES (11, "Gloves", 10, 50000, "Brown");
+INSERT INTO store VALUES (12, "Sneakers", 100, 50000, "White");
+INSERT INTO store VALUES (13, "Belts", 120, 50000, "Brown");
+INSERT INTO store VALUES (14, "Female Underwear", 10, 50000, "Blue");
+INSERT INTO store VALUES (15, "Bracelets", 10, 50000, "Gold");
+SELECT * FROM store;
+
+--Expected revenue
+SELECT SUM(price) FROM store;
+
+--Order items by price
+SELECT * FROM store ORDER BY price DESC
