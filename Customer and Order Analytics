@@ -47,3 +47,10 @@ SELECT count(DISTINCT i.acctnum) AS customers, AVG(e.price*e.quantity)
 FROM BIT_DB.febsales e
 INNER JOIN BIT_DB.customers i ON i.order_id = e.orderID 
 WHERE e.quantity > 2 AND length(e.orderid) = 6 AND e.orderid <> 'Order ID'
+
+--List all the products sold in Los Angeles in February, and include how many of each were sold.
+
+SELECT Product,SUM(quantity)
+FROM BIT_DB.febsales 
+WHERE location LIKE '%Los Angeles%'
+GROUP BY Product
