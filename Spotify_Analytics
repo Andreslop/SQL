@@ -1,0 +1,22 @@
+#In this project I asked myself questions about the database I was given
+
+--What is the average danceability by artist and track?
+
+SELECT artist_name, AVG(danceability)
+FROM BIT_DB.Spotifydata 
+GROUP BY artist_name
+ORDER BY 2 DESC
+
+--Calculate the average popularity for the artists in the Spotify data table. 
+--Then, for every artist with an average popularity of 90 or above, show their name, their average popularity, and label them as a “Top Star”.
+
+WITH ninja AS (
+SELECT i.artist_name, AVG(i.popularity) as popularity1
+FROM Spotifydata i
+GROUP BY i.artist_name
+)
+
+SELECT artist_name, popularity1, 'TOP STAR' as tag
+FROM ninja
+WHERE popularity1 >= 90
+ORDER BY popularity1 DESC
